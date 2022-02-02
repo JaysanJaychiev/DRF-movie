@@ -1,5 +1,5 @@
 from django.db import models
-from rest_framework import generics
+from rest_framework import generics, permissions
 from django_filters.rest_framework import DjangoFilterBackend   
 
 # from rest_framework.response import Response
@@ -19,8 +19,8 @@ class MovieListView(generics.ListAPIView):
     """Вывод списка фильмов"""
     serializer_class = MovieListSerializer
     filter_backends = (DjangoFilterBackend,)
-    filterset = MovieFilter
-
+    filterset_class = MovieFilter
+    permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
         movies = Movie.objects.filter(draft=False).annotate(

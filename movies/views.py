@@ -1,26 +1,28 @@
 from django.db import models
-from rest_framework import generics, permissions
+from rest_framework import generics, permissions, viewsets
 from django_filters.rest_framework import DjangoFilterBackend   
 
 # from rest_framework.response import Response
 # from rest_framework.views import APIView
 
 from .models import Movie, Actor
-from .serializers import (MovieListSerializer, 
-                          MovieDetailSerializer, 
-                          ReviewCreateSerializer, 
-                          CreateRatingSerializer,
-                          ActorListSerializer,
-                          ActorDetailSerializer,)
+from .serializers import (
+    MovieListSerializer, 
+    MovieDetailSerializer, 
+    ReviewCreateSerializer, 
+    CreateRatingSerializer,
+    ActorListSerializer,
+    ActorDetailSerializer,)
 
 from .service import get_client_ip, MovieFilter
+
 
 class MovieListView(generics.ListAPIView):
     """Вывод списка фильмов"""
     serializer_class = MovieListSerializer
     filter_backends = (DjangoFilterBackend,)
     filterset_class = MovieFilter
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
         movies = Movie.objects.filter(draft=False).annotate(
@@ -36,11 +38,13 @@ class MovieDetailView(generics.RetrieveAPIView):
     """Вывод фильмa"""
     queryset = Movie.objects.filter(draft=False)
     serializer_class = MovieDetailSerializer
+    # permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
 
 class ReviewCreateView(generics.CreateAPIView):
     """Добавление отзыва к фильму"""
     serializer_class = ReviewCreateSerializer
+    # permission_classes = [permissions.IsAdminUser]
 
 
 class AddStarRatingView(generics.CreateAPIView):

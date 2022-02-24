@@ -14,19 +14,19 @@ DB_USER = os.environ.get('DB_USER')
 
 GMAIL_LOGIN = os.environ.get('GMAIL_PASSWORD')
 GMAIL_PASSWORD = os.environ.get('GMAIL_PASSWORD')
-# SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-o&fklhevzt=duwap95-w0gmuv0--ig@h$_ww83-3xw0i@7!qks'
+# SECRET_KEY = 'django-insecure-o&fklhevzt=duwap95-w0gmuv0--ig@h$_ww83-3xw0i@7!qks'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['my-cinema-api.herokuapp.com/']
 
 
 # Application definition

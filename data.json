@@ -1,0 +1,164 @@
+[
+{
+  "model": "movies.category",
+  "pk": 1,
+  "fields": {
+    "name": "Боевик",
+    "description": "Дерутся стреляют пытыш тытыш",
+    "url": "boevik"
+  }
+},
+{
+  "model": "movies.actor",
+  "pk": 1,
+  "fields": {
+    "name": "Арнольд Бурнолд",
+    "age": 99,
+    "description": "Качок Шварц",
+    "image": "actors/python-hero.jpeg"
+  }
+},
+{
+  "model": "movies.actor",
+  "pk": 2,
+  "fields": {
+    "name": "Куано Ривз",
+    "age": 80,
+    "description": "Какойто фантазёр",
+    "image": "actors/куо.jpg"
+  }
+},
+{
+  "model": "movies.genre",
+  "pk": 1,
+  "fields": {
+    "name": "Жанр манр не понимейшн",
+    "description": "Вот так на этом жанре и закончилось",
+    "url": "arnold-jan"
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 1,
+  "fields": {
+    "title": "Терминатор-1",
+    "tagline": "Термо брат",
+    "description": "<p>Из будущего приходит какойто киборг убийца и ищет какогото знакомого из прошлого и все</p>",
+    "poster": "movies/терминатор.jpg",
+    "year": 2002,
+    "country": "Лондон",
+    "world_premiere": "2021-12-18",
+    "budget": 25000,
+    "fees_in_usa": 200000,
+    "fees_in_world": 20000000,
+    "category": 1,
+    "url": "Termo-1",
+    "draft": false,
+    "directors": [
+      2
+    ],
+    "actors": [
+      1
+    ],
+    "genres": [
+      1
+    ]
+  }
+},
+{
+  "model": "movies.movieshots",
+  "pk": 1,
+  "fields": {
+    "title": "Смерть арнольда",
+    "description": "он умер и все",
+    "image": "movie_shots/shwartz2.jpg",
+    "movie": 1
+  }
+},
+{
+  "model": "movies.ratingstar",
+  "pk": 1,
+  "fields": {
+    "value": 1
+  }
+},
+{
+  "model": "movies.ratingstar",
+  "pk": 2,
+  "fields": {
+    "value": 2
+  }
+},
+{
+  "model": "movies.ratingstar",
+  "pk": 3,
+  "fields": {
+    "value": 3
+  }
+},
+{
+  "model": "movies.ratingstar",
+  "pk": 4,
+  "fields": {
+    "value": 4
+  }
+},
+{
+  "model": "movies.ratingstar",
+  "pk": 5,
+  "fields": {
+    "value": 5
+  }
+},
+{
+  "model": "movies.rating",
+  "pk": 2,
+  "fields": {
+    "ip": "127.0.0.1",
+    "star": 1,
+    "movie": 1
+  }
+},
+{
+  "model": "movies.rating",
+  "pk": 3,
+  "fields": {
+    "ip": "125.125.124.15",
+    "star": 5,
+    "movie": 1
+  }
+},
+{
+  "model": "movies.review",
+  "pk": 1,
+  "fields": {
+    "email": "test@gmail.com",
+    "name": "Mike",
+    "text": "My mess",
+    "parent": null,
+    "movie": 1
+  }
+},
+{
+  "model": "movies.review",
+  "pk": 2,
+  "fields": {
+    "email": "ee@mail.com",
+    "name": "Test",
+    "text": "Two mess",
+    "parent": 1,
+    "movie": 1
+  }
+},
+{
+  "model": "movies.review",
+  "pk": 3,
+  "fields": {
+    "email": "manas@gmail.com",
+    "name": "Manas Bekborbiev",
+    "text": "Очень интересный фильм весь фильм рыдал",
+    "parent": null,
+    "movie": 1
+  }
+}
+]

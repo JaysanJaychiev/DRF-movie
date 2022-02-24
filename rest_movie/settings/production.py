@@ -24,7 +24,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECRET_KEY = 'django-insecure-o&fklhevzt=duwap95-w0gmuv0--ig@h$_ww83-3xw0i@7!qks'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['my-cinema-api.herokuapp.com/']
 
